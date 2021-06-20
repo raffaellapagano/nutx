@@ -22,7 +22,7 @@ export default {
   components: { Cliente },
   computed: {
     users () {
-      return this.$store.dispatch('GetUsers')
+      return this.$store.getters['users/getUsers']
     }
   },
   data () {

@@ -11,9 +11,6 @@ export const state = () => ({
 
 //  getter
 export const getter = {
-  GetUsers: (state) => {
-    return state.users
-  },
   GetAlbums: (state) => {
     return state.albums
   },
@@ -21,32 +18,9 @@ export const getter = {
     return state.modal
   }
 }
-//  actions
-export const actions = {
-  async loadUsers ({ commit }) {
-    const { data } = await this.$axios.get('http://jsonplaceholder.typicode.com/users')
-    console.log(data)
-    commit('SetUsers', data)
-  }
-  // loadAlbums({ commit }) {
-  //   axios
-  //     .get("http://jsonplaceholder.typicode.com/photos", {
-  //       headers: {
-  //         "Ocp-Apim-Subscription-Key": "your key"
-  //       }
-  //     })
-  //     .then(response => response.data)
-  //     .then(albums => {
-  //       commit("SetAlbums", albums);
-  //     });
-  // }
-}
 
 //  mutations
 export const mutations = {
-  SetUsers (state, users) {
-    state.users = users
-  },
   SetAlbums (state, albums) {
     state.albums = albums
   },
